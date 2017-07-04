@@ -2,6 +2,8 @@ __author__ = "Fredrik Boulund"
 __date__ = "2017"
 __doc__ = """Field validators for Zebra labels."""
 
+import argparse
+
 class field_validators():
     """
     Field validators for BARI labels.

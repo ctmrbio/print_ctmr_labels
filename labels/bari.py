@@ -16,7 +16,7 @@ class BARI():
     """
 
     def initialize_subparser(self, subparsers):
-        subparser = subparsers.add_parser("BARI", help="Medium label, three lines.")
+        subparser = subparsers.add_parser("bari", help="Medium label, three lines.")
     
         subparser.add_argument("--description", "-d", dest="description",
                 required=True,

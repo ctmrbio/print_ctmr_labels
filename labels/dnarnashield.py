@@ -17,17 +17,17 @@ class DnaRnaShield():
     """
 
     def initialize_subparser(self, subparsers):
-        subparser = subparsers.add_parser("DnaRnaShield", help="Medium label, three lines.")
+        subparser = subparsers.add_parser("dnarnashield", help="Medium label, three lines.")
     
         subparser.add_argument("--title", "-t", dest="title",
                 required=True,
                 default="DNA/RNA Shield",
-                type=field_validators.free_text,
-                help="Line 1: Free text, max ca 15 characters.")
+                type=partial(field_validators.free_text, max_length=20),
+                help="Line 1: Free text, max ca 20 characters.")
         subparser.add_argument("--description", "-d", dest="description",
                 required=True,
                 default="R1100-250, ZRC123456",
-                type=field_validators.free_text, 
+                type=partial(field_validators.free_text, max_length=20), 
                 help="Line 2: Free text, max ca 15 characters.")
         subparser.add_argument("--date", "-D", dest="date",
                 required=True,
@@ -49,12 +49,12 @@ class DnaRnaShield():
         Wrap content in ZPL.
         """
         zpl = """^XA
-        ^CF0,40
-        ^FO10,10^FD{title}^FS
-        ^CF0,25
-        ^FO10,50^FD{description}^FS
-        ^CF0,25
-        ^FO10,80^FD{date}{initials}^FS
+        ^CF0,30
+        ^FO40,10^FD{title}^FS
+        ^CF0,20
+        ^FO40,50^FD{description}^FS
+        ^CF0,20
+        ^FO40,80^FD{date}{initials}^FS
         ^XZ
         """.format(**content)
         return zpl
