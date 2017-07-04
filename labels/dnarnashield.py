@@ -29,7 +29,7 @@ class DnaRnaShield():
                 default="R1100-250, ZRC123456",
                 type=field_validators.free_text, 
                 help="Line 2: Free text, max ca 15 characters.")
-        subparser.add_argument("--date", "-d", dest="date",
+        subparser.add_argument("--date", "-D", dest="date",
                 required=True,
                 default="2017.01.01",
                 type=field_validators.date,
