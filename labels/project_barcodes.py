@@ -41,7 +41,7 @@ class ProjectBarcodes():
         """
 
         zpl = """^XA^LL150
-        ^FO30,20^BY1.5
+        ^FO50,20^BY1.5
         ^BEN,50,Y,N
         ^FD{project_id}{sample_id:09d}^FS
         ^XZ
