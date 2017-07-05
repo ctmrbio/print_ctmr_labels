@@ -22,13 +22,15 @@ class zebra_printer():
         """
         self.tcp_ip = tcp_ip
         self.tcp_port = tcp_port
+        self.socket = socket.socket(family=socket.AF_INET, type=socket.SOCK_STREAM)
         try:
-            s = socket.socket(family=socket.AF_INET, type=socket.SOCK_STREAM)
-            s.connect((self.tcp_ip, self.tcp_port))
-        except ConnectionRefusedError:
-            logger.error("Connection to %s:%s refused." % self.tcp_ip, self.tcp_port)
+            self.socket.connect((self.tcp_ip, self.tcp_port))
+            logger.debug("Connected to Zebra printer at %s:%s", self.tcp_ip, self.tcp_port)
+        except socket.error as e:
+            logger.error("Connection to %s:%s failed: %s", self.tcp_ip, self.tcp_port, e)
+            raise IOError("Failed to connect to Zebra")
         finally:
-            s.close()
+            self.socket.close()
 
     def send_to_zebra(self, payload):
         """
@@ -36,12 +38,11 @@ class zebra_printer():
 
         The printer expects ZPL code.
         """
-        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.connect((self.tcp_ip, self.tcp_port))
+        self.socket.connect((self.tcp_ip, self.tcp_port))
         time.sleep(1)
-        response = s.send(payload)
+        response = self.socket.send(payload)
         time.sleep(1)
-        s.close()
+        self.socket.close()
         return response
 
     def test_print(self):

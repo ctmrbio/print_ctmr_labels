@@ -16,6 +16,7 @@ __author__ = "CTMR, Fredrik Boulund"
 __date__ = "2017"
 __doc__ = """Print labels using Zebra printer."""
 
+logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 @Gooey(program_name="CTMR Zebra label printing application", image_dir="img")
@@ -63,7 +64,10 @@ def main(options):
     Main function.
     """
 
-    zebra = zebra_printer(options.zebra_ip, options.zebra_port)
+    try:
+        zebra = zebra_printer(options.zebra_ip, options.zebra_port)
+    except IOError:
+        exit(2)
 
     selected_label = options.func()
     payload = selected_label.make_labels(options)
