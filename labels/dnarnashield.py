@@ -50,7 +50,7 @@ class DnaRnaShield():
         """
         zpl = """^XA
         ^CF0,30
-        ^FO40,10^FD{title}^FS
+        ^FO31,10^FD{title}^FS
         ^CF0,20
         ^FO40,50^FD{description}^FS
         ^CF0,20
