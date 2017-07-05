@@ -15,11 +15,6 @@ class ProjectBarcodes():
     def initialize_subparser(self, subparsers):
         subparser = subparsers.add_parser("project_barcodes", help="Small label, one EAN13 barcode.")
 
-        subparser.add_argument("--project", "-p", dest="project",
-                required=True,
-                default="Project ID",
-                type=field_validators.project_id,
-                help="A valid three digit project ID.")
         subparser.add_argument("--start", "-s", dest="start",
                 required=True,
                 default=0,
@@ -30,8 +25,13 @@ class ProjectBarcodes():
                 default=0,
                 type=int, 
                 help="Ending sample ID.")
+        subparser.add_argument("--project", "-p", dest="project",
+                required=True,
+                default="Project ID",
+                type=field_validators.project_id,
+                help="A valid three digit project ID.")
         
-        subparser.set_defaults(func=LargeBox)
+        subparser.set_defaults(func=ProjectBarcodes)
         return subparser
     
     @staticmethod
@@ -61,7 +61,7 @@ class ProjectBarcodes():
         for sample_id in range(options.start, options.end+1):
                 content = {
                         "project_id": options.project,
-                        "sample_id": options.description,
+                        "sample_id": sample_id,
                         }
 
                 copies = options.copies
