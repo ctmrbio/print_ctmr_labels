@@ -31,6 +31,7 @@ class zebra_printer():
             raise IOError("Failed to connect to Zebra")
         finally:
             self.socket.close()
+        self.socket = socket.socket(family=socket.AF_INET, type=socket.SOCK_STREAM)
 
     def send_to_zebra(self, payload):
         """
