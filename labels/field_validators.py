@@ -49,3 +49,11 @@ class field_validators():
             raise argparse.ArgumentTypeError(msg)
         else:
             return initials.upper()
+
+    @staticmethod
+    def project_id(pid):
+        if len(pid) != 3:
+            msg = "Project ID must consist of exactly three digits."
+            raise argparse.ArgumentTypeError(msg)
+        else:
+            return pid
