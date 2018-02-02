@@ -1,5 +1,5 @@
-__author__ = "Fredrik Boulund"
-__date__ = "2017"
+__author__ = "Fredrik Boulund, Kim Wong"
+__date__ = "2018"
 __doc__ = """Field validators for Zebra labels."""
 
 import argparse
@@ -54,6 +54,17 @@ class field_validators():
     def project_id(pid):
         if len(pid) != 3:
             msg = "Project ID must consist of exactly three digits."
+            raise argparse.ArgumentTypeError(msg)
+        elif pid[0] == 7:
+            msg = "Project ID may not begin with a 7."
+            raise argparse.ArgumentTypeError(msg)
+        else:
+            return pid
+
+    @staticmethod
+    def zagai_project_id(pid):
+        if len(pid) != 2:
+            msg = "Project ID must consist of exactly two digits."
             raise argparse.ArgumentTypeError(msg)
         else:
             return pid
