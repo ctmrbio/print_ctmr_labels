@@ -12,3 +12,7 @@ The application runs in Python 2.7 with
 possible to run the application without GUI in pure command-line mode with
 just a simple modification of the source code. Just edit the code and comment
 the `@Gooey` decorator line on line 21 in `print_cmtr_labels.py`.
+
+# Printer information
+The Zebra label printer is model ZT230 and uses the ZPL language for rendering
+barcodes. A handy viewer for this language can be found [here](http://labelary.com/viewer.html)
