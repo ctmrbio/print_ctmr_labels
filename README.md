@@ -15,4 +15,4 @@ the `@Gooey` decorator line on line 21 in `print_cmtr_labels.py`.
 
 # Printer information
 The Zebra label printer is model ZT230 and uses the ZPL language for rendering
-barcodes. A handy viewer for this language can be found [here](http://labelary.com/viewer.html)
+barcodes. A handy viewer for this language can be found [here](http://labelary.com/viewer.html).
