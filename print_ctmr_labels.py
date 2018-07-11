@@ -64,10 +64,11 @@ def main(options):
     Main function.
     """
 
-    try:
-        zebra = zebra_printer(options.zebra_ip, options.zebra_port)
-    except IOError:
-        exit(2)
+    if not options.dryrun:
+        try:
+            zebra = zebra_printer(options.zebra_ip, options.zebra_port)
+        except IOError:
+            exit(2)
 
     selected_label = options.func()
     payload = selected_label.make_labels(options)
