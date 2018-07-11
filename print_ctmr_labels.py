@@ -41,7 +41,7 @@ def parse_args():
                 default=2,
                 help="Number of copies per label.")
         printer.add_argument("--zebra-ip", "-I", dest="zebra_ip",
-                default="10.237.124.3",
+                default="169.254.133.1",
                 help="IP number to Zebra printer.")
         printer.add_argument("--zebra-port", "-P", dest="zebra_port",
                 default=9100,
