@@ -9,11 +9,11 @@ import logging
 
 from gooey import Gooey
 
-from zebra import zebra_printer
+from zebra import zebra_printer_usb
 from labels import *
 
-__author__ = "CTMR, Fredrik Boulund"
-__date__ = "2017"
+__author__ = "CTMR, Fredrik Boulund, Kim Wong"
+__date__ = "2018"
 __doc__ = """Print labels using Zebra printer."""
 
 logging.basicConfig(level=logging.INFO)
@@ -41,12 +41,20 @@ def parse_args():
                 default=2,
                 help="Number of copies per label.")
         printer.add_argument("--zebra-ip", "-I", dest="zebra_ip",
-                default="169.254.133.1",
+                default="10.237.124.3",
                 help="IP number to Zebra printer.")
         printer.add_argument("--zebra-port", "-P", dest="zebra_port",
                 default=9100,
                 type=int,
                 help="Port number for Zebra printer.")
+        printer.add_argument("--zebra-id-vendor", "-v", dest="zebra_id_vendor",
+                default=2655,
+                type=int,
+                help="Zebra printer USB vendor ID")
+        printer.add_argument("--zebra-id-product", "-r", dest="zebra_id_product",
+                default=213,
+                type=int,
+                help="Zebra printer USB product ID")
         printer.add_argument("--zebra-buffer", "-B", dest="zebra_buffer",
                 default=1024,
                 type=int,
@@ -60,13 +68,15 @@ def parse_args():
 
 
 def main(options):
-    """
+        """
     Main function.
     """
 
     try:
-        zebra = zebra_printer(options.zebra_ip, options.zebra_port)
-    except IOError:
+##        zebra = zebra_printer(options.zebra_ip, options.zebra_port)
+        zebra = zebra_printer_usb(options.zebra_id_vendor, options.zebra_id_product)
+##    except IOError:
+    except ValueError:
         exit(2)
 
     selected_label = options.func()
