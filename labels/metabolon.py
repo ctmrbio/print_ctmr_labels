@@ -54,11 +54,11 @@ class Metabolon():
         """
         zpl = """^XA
         ^CF0,30
-        ^FO31,10^FD  {title}^FS
+        ^FO50,10^FD{title}^FS
         ^CF0,20
-        ^FO40,50^FD  {description}^FS
+        ^FO50,43^FD{description}^FS
         ^CF0,20
-        ^FO40,80^FD  {date} {initials}^FS
+        ^FO50,70^FD{date} {initials}^FS
         ^XZ
         """.format(**content)
         return zpl
