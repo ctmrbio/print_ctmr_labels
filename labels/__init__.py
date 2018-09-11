@@ -1,6 +1,7 @@
 from bari import BARI
 from dnarnashield import DnaRnaShield
 from large_box import LargeBox
+from narrow_project_barcodes import NarrowProjectBarcodes
 from project_barcodes import ProjectBarcodes
 from metabolon import Metabolon
 from zagai_barcodes import ZagaiBarcodes
@@ -10,6 +11,7 @@ all_labels = [
     DnaRnaShield,
     LargeBox,
     Metabolon,
+    NarrowProjectBarcodes,
     ProjectBarcodes,
     ZagaiBarcodes,
 ]
