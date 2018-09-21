@@ -55,6 +55,9 @@ def parse_args():
                 help="Test print.")
         printer.add_argument("--dryrun", "-Y", dest="dryrun", action="store_true",
                 help="Dryrun; do not print anything.")
+        printer.add_argument("--cancel", "-C", dest="cancel", action="store_true",
+                help="Cancel all jobs.")
+            
 
     return parser.parse_args()
 
@@ -69,6 +72,10 @@ def main(options):
             zebra = zebra_printer(options.zebra_ip, options.zebra_port)
         except IOError:
             exit(2)
+
+    if options.cancel:
+        zebra.cancel_jobs()
+        exit()
 
     selected_label = options.func()
     payload = selected_label.make_labels(options)

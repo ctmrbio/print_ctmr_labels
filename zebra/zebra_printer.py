@@ -58,3 +58,11 @@ class zebra_printer():
         logger.info('Sending code: {}'.format(test_zpl))
         r = self.send_to_zebra(test_zpl)
         logger.info('Printer response: {}'.format(r))
+
+    def cancel_jobs(self):
+        """
+        Cancel all jobs in printer's queue.
+        """
+        logger.info("Sending cancel code '~JA' to printer.")
+        r = self.send_to_zebra("~JA")
+        logger.info("Printer response: {}".format(r))
