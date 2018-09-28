@@ -45,7 +45,7 @@ class LargeBox():
         subparser.add_argument("--initials", "-i", dest="initials",
                 required=True,
                 default="MH",
-                type=partial(field_validators.initials, chars=4),
+                type=partial(field_validators.free_text, max_length=4),
                 help="Line 4: Initials, max 4 characters.")
         
         subparser.set_defaults(func=LargeBox)
@@ -57,10 +57,10 @@ class LargeBox():
         Wrap content in ZPL.
         """
 
-        centered_project = content.project.center(20)
-        centered_storage_date = content.storage_date.center(30)
-        centered_label_date_initials = "{storage_date}{initials}"\
-                .format(content.label_date, content.initials)\
+        centered_project = content["project"].center(20)
+        centered_storage_date = content["storage_date"].center(30)
+        centered_label_date_initials = "{label_date}{initials}"\
+                .format(label_date=content["label_date"], initials=content["initials"])\
                 .center(30)
 
         zpl = """^XA
@@ -72,10 +72,10 @@ class LargeBox():
         ^FO0,300^GB500,1,3^FS
         ^CF0,20 ^FO40,80^FD{label_date_initials}^FS
         ^XZ
-        """.format(centered_project, 
-                content.description, 
-                centered_storage_date, 
-                centered_label_date_initials)
+        """.format(project=centered_project, 
+                description=content["description"],
+                storage_date=centered_storage_date, 
+                label_date_initials=centered_label_date_initials)
         return zpl
 
     def make_labels(self, options): 
@@ -87,9 +87,10 @@ class LargeBox():
         """  
 
         content = {
-            "title": options.title,
+            "project": options.project,
             "description": options.description,
-            "date": options.date,
+            "storage_date": options.storage_date,
+            "label_date": options.label_date,
             "initials": options.initials,
             }
 
