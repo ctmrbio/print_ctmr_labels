@@ -64,13 +64,15 @@ class LargeBox():
                 .center(30)
 
         zpl = """^XA
-        ^CF0,80 ^FO40,30^FD{project}^FS
+        ^CF0,50
+        ^FO40,30^FD{project}^FS
         ^FO0,120^GB500,1,3^FS
         ^CF0,50 
-        ^FO40,50^FD{description}^FS
-        ^FO40,50^FD{storage_date}^FS
+        ^FO40,150^FD{description}^FS
+        ^FO40,220^FD{storage_date}^FS
         ^FO0,300^GB500,1,3^FS
-        ^CF0,20 ^FO40,80^FD{label_date_initials}^FS
+        ^CF0,20
+        ^FO40,320^FD{label_date_initials}^FS
         ^XZ
         """.format(project=centered_project, 
                 description=content["description"],
