@@ -10,13 +10,13 @@ from field_validators import field_validators
 class LargeBox():
     """Large box label.
 
-    Large label, four lines:
-    Project Name
-    ------------
-     CTMR Box 1
-     2017.06.29
-    ------------
-    2017.07.07MH
+    Large label, four lines plus a QR code:
+      Project Name
+    -----------------
+     [QR] CTMR Box 1
+     [QR] 2017.06.29
+    -----------------
+      2017.07.07MH
     """
 
     def initialize_subparser(self, subparsers):
@@ -82,13 +82,13 @@ class LargeBox():
         ^CF0,50
         ^FO20,30^FD{project}^FS
         ^FO0,90^GB500,1,3^FS
-        ^FO50,100
-        ^BQN,2,8
+        ^FO60,100
+        ^BQN,2,4
         ^FDQA,{description}^FS
-        ^CF0,40
-        ^FO250,150^FD{description}^FS
-        ^FO120,220^FD{storage_date}^FS
-        ^FO0,310^GB500,1,3^FS
+        ^CF0,50
+        ^FO170,140^FD{description}^FS
+        ^FO0,230^FD{storage_date}^FS
+        ^FO0,300^GB500,1,3^FS
         ^CF0,30
         ^FO40,330^FD{label_date_initials}^FS
         ^XZ
