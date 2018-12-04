@@ -67,10 +67,10 @@ class LargeBox():
 # ^CF0,50                               ## set font to type 0, height 50
 # ^FO50,30^FD{project}^FS               ## set position to 50, 30 && write the project name
 # ^FO0,90^GB500,1,3^FS                  ## set position to 0, 90 && draw a horizontal line (box 500x1, thickness 3)
-# ^CF0,50                               ## set font to type 0, height 50
 # ^FO50,100                             ## set position to 50, 100
 # ^BQN,2,8                              ## begin QR code of "normal, enhanced, zoom=8"
 # ^FDQA,{description}^FS                ## print barcode with correction level Q, data input Auto
+# ^CF0,50                               ## set font to type 0, height 50
 # ^FO250,150^FD{description}^FS         ## set position to 250, 150 && write the description
 # ^FO250,220^FD{storage_date}^FS        ## set position to 250, 150 && write the storage date
 # ^FO0,300^GB500,1,3^FS                 ## set position to 0, 300 && draw a horizontal line
@@ -80,17 +80,17 @@ class LargeBox():
 
         zpl = """^XA
         ^CF0,50
-        ^FO50,30^FD{project}^FS
+        ^FO20,30^FD{project}^FS
         ^FO0,90^GB500,1,3^FS
-        ^CF0,50
         ^FO50,100
         ^BQN,2,8
         ^FDQA,{description}^FS
+        ^CF0,40
         ^FO250,150^FD{description}^FS
-        ^FO250,220^FD{storage_date}^FS
-        ^FO0,300^GB500,1,3^FS
-        ^CF0,20
-        ^FO40,320^FD{label_date_initials}^FS
+        ^FO120,220^FD{storage_date}^FS
+        ^FO0,310^GB500,1,3^FS
+        ^CF0,30
+        ^FO40,330^FD{label_date_initials}^FS
         ^XZ
         """.format(project=centered_project, 
                 description=content["description"],
