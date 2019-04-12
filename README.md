@@ -16,6 +16,8 @@ the `@Gooey` decorator line on line 21 in `print_cmtr_labels.py`.
 # Printer information
 The Zebra label printer is model ZT230 and uses the ZPL language for rendering
 barcodes. A handy viewer for this language can be found [here](http://labelary.com/viewer.html).
+Documentation for the language used to code the barcodes can be found [here](https://www.zebra.com/content/dam/zebra/manuals/printers/common/programming/zpl-zbi2-pm-en.pdf).
+`large_box.py` has a commented barcode which may be used as a reference.
 
 # Computer connection
 The Zebra printer is now connected to the printer computer using a USB network card (StarTech USB
