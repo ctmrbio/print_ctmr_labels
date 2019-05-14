@@ -13,7 +13,7 @@ class RomansBarcodes():
     """
 
     def initialize_subparser(self, subparsers):
-        subparser = subparsers.add_parser("project_barcodes", help="Small label, one EAN13 barcode.")
+        subparser = subparsers.add_parser("romans_barcodes", help="Small label, one Code 128 barcode.")
 
         subparser.add_argument("--start", "-s", dest="start",
                 required=True,
