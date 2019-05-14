@@ -36,7 +36,7 @@ class RomansBarcodes():
                 type=field_validators.exact_length,
                 help="Four letter sample type.")
 
-        subparser.set_defaults(func=ProjectBarcodes)
+        subparser.set_defaults(func=RomansBarcodes)
         return subparser
 
     @staticmethod
