@@ -68,3 +68,11 @@ class field_validators():
             raise argparse.ArgumentTypeError(msg)
         else:
             return pid
+
+    @staticmethod
+    def exact_length(string, length=4):
+        if len(string) != length:
+            msg = "Project ID must consist of exactly {length} digits.".format(length=length)
+            raise argparse.ArgumentTypeError(msg)
+        else:
+            return string
