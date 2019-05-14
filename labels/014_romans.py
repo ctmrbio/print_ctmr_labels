@@ -6,7 +6,7 @@ import argparse
 
 from field_validators import field_validators
 
-class ProjectBarcodes():
+class RomansBarcodes():
     """Project barcode labels.
 
     Small label, one Code 128 barcode.
