@@ -46,7 +46,7 @@ class RomansBarcodes():
         """
 
         zpl = """^XA^LL150
-        ^FO50,20^BY1.5
+        ^FO50,15^BY1
         ^BCN,50,Y,N,Y,D
         ^FD{project_id}{sample_type}{sample_id:05d}^FS
         ^XZ
