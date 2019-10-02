@@ -35,8 +35,8 @@ class LargeBox():
         subparser.add_argument("--storage-date", "-s", dest="storage_date",
                 required=True,
                 default="2017.01.01",
-                type=field_validators.date,
-                help="Line 3: Date (YYYY.MM.DD).")
+                type=partial(field_validators.free_text, max_length=12),
+                help="Line 3: Date (YYYY.MM.DD)[max 12 chars].")
         subparser.add_argument("--label-date", "-l", dest="label_date",
                 required=True,
                 default="2017.01.01",
