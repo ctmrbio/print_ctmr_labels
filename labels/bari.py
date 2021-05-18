@@ -4,7 +4,7 @@ __doc__ = """Print medium label, three lines, according to BARI template."""
 
 import argparse
 
-from field_validators import field_validators
+from .field_validators import field_validators
 
 class BARI():
     """BARI label.

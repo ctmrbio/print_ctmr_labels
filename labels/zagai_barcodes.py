@@ -4,7 +4,7 @@ __doc__ = """Print small barcode labels, intended for sample collection tubes. F
 
 import argparse
 
-from field_validators import field_validators
+from .field_validators import field_validators
 
 class ZagaiBarcodes():
     """Project barcode labels for Ulrika Zagai's projects.

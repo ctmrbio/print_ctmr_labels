@@ -5,7 +5,7 @@ __doc__ = """Print large label, intended for boxes or racks in the freezer."""
 import argparse
 from functools import partial
 
-from field_validators import field_validators
+from .field_validators import field_validators
 
 class LargeBox():
     """Large box label.

@@ -3,9 +3,9 @@ __date__ = "2017"
 __doc__ = """Print small barcode labels, intended for sample collection tubes."""
 
 import argparse
-from itertools import izip_longest
+from itertools import zip_longest
 
-from field_validators import field_validators
+from .field_validators import field_validators
 
 
 class NarrowProjectBarcodes():
@@ -70,7 +70,7 @@ class NarrowProjectBarcodes():
         # grouper('ABCDEFG', 3, 'x') --> ABC DEF Gxx
         print(iterable)
         args = [iter(iterable)] * n
-        return izip_longest(fillvalue=fillvalue, *args)
+        return zip_longest(fillvalue=fillvalue, *args)
 
     def make_labels(self, options):
         """

@@ -5,7 +5,7 @@ __doc__ = """Print medium label, three lines, according to DNA/RNA shield templa
 import argparse
 from functools import partial
 
-from field_validators import field_validators
+from .field_validators import field_validators
 
 class DnaRnaShield():
     """DNA/RNA shield label.

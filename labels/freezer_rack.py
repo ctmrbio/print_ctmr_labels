@@ -5,7 +5,7 @@ __doc__ = """Print freezer rack label."""
 import argparse
 from functools import partial
 
-from field_validators import field_validators
+from .field_validators import field_validators
 
 class FreezerRack():
     """Large label.
