@@ -1,0 +1,40 @@
+name: printctmrlabels
+channels:
+  - defaults
+dependencies:
+  - backports=1.0=pyhd3eb1b0_2
+  - backports.lzma=0.0.14=py37hb10d4a3_0
+  - ca-certificates=2021.4.13=hecd8cb5_1
+  - certifi=2020.12.5=py37hecd8cb5_0
+  - expat=2.3.0=h23ab428_2
+  - gettext=0.21.0=h7535e17_0
+  - icu=58.2=h0a44026_3
+  - jpeg=9b=he5867d9_2
+  - libcxx=10.0.0=1
+  - libffi=3.3=hb1e8313_2
+  - libiconv=1.16=h1de35cc_0
+  - libpng=1.6.37=ha441bb4_0
+  - libxml2=2.9.10=h7cdb67c_3
+  - llvm-openmp=10.0.0=h28b9765_0
+  - ncurses=6.2=h0a44026_1
+  - openssl=1.1.1k=h9ed2024_0
+  - pip=21.0.1=py37hecd8cb5_0
+  - python=3.7.10=h88f2d9e_0
+  - python.app=3=py37h9ed2024_0
+  - readline=8.1=h9ed2024_0
+  - setuptools=52.0.0=py37hecd8cb5_0
+  - six=1.15.0=py37hecd8cb5_0
+  - sqlite=3.35.4=hce871da_0
+  - tk=8.6.10=hb0a8c7a_0
+  - wheel=0.36.2=pyhd3eb1b0_0
+  - xz=5.2.5=h1de35cc_0
+  - zlib=1.2.11=h1de35cc_3
+  - pip:
+    - colored==1.4.2
+    - gooey==1.0.8
+    - numpy==1.20.3
+    - pillow==8.2.0
+    - psutil==5.8.0
+    - pygtrie==2.4.2
+    - wxpython==4.1.0
+prefix: /Users/ahmed.amin/opt/miniconda3/envs/printctmrlabels
