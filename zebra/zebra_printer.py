@@ -41,7 +41,7 @@ class zebra_printer():
         """
         self.socket.connect((self.tcp_ip, self.tcp_port))
         time.sleep(1)
-        response = self.socket.send(payload)
+        response = self.socket.send(payload.encode("utf-8"))
         time.sleep(1)
         self.socket.close()
         return response
