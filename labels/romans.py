@@ -4,7 +4,7 @@ __doc__ = """Print small barcode labels, intended for sample collection tubes.""
 
 import argparse
 
-from field_validators import field_validators
+from .field_validators import field_validators
 
 class RomansBarcodes():
     """Project barcode labels.

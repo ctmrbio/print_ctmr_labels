@@ -1,6 +1,6 @@
-#!/usr/bin/env python2.7
+#!/usr/bin/env python3
 # encoding: utf-8 
-from __future__ import print_function
+
 from sys import argv, exit
 import socket
 import time
@@ -54,10 +54,10 @@ def parse_args():
         printer.add_argument("--test", "-T", dest="test_print", action="store_true",
                 help="Test print.")
         printer.add_argument("--dryrun", "-Y", dest="dryrun", action="store_true",
+                default=False,
                 help="Dryrun; do not print anything.")
         printer.add_argument("--cancel", "-C", dest="cancel", action="store_true",
                 help="Cancel all jobs.")
-            
 
     return parser.parse_args()
 
@@ -94,5 +94,6 @@ def main(options):
 
 if __name__ == "__main__":
     options = parse_args()
+    print(options)
     response = main(options) 
     print("Printer responded with:", response)

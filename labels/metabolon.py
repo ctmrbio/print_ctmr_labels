@@ -6,7 +6,7 @@ import os
 import argparse
 from functools import partial
 
-from field_validators import field_validators
+from .field_validators import field_validators
 
 class Metabolon():
     """Metabolon template
