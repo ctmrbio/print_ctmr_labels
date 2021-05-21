@@ -18,6 +18,9 @@ There is a conda environment file with all the required dependencies to run
 the application in Linux called `conda_linux.yml`. Install the dependencies
 with `conda env create -f conda_linux.yml`. Remember to activate the environment
 before running the application.
+The required depedencies to run the application in macOS is called `conda_mac.yml`. Install dependencies
+with `conda env create -f conda_mac.yml`.
+To run the application in Windows, nstall dependencies with `conda env create -f win_env.yml`. Environment can be activated with `conda activate printctmrlabels`.
 
 # Printer information
 The Zebra label printer is model ZT230 and uses the ZPL language for rendering
@@ -36,3 +39,6 @@ The network settings of the Zebra printer should be set to "PERMANENT",
 and the IP address `169.254.133.1` and hostmask `255.255.0.0` (same as the
 computer).  The gateway can be left as `0.0.0.0`. After setting these,  then
 the network settings should be "RESET" to save this configuration.
+
+# Current Setup:
+A laptop runs Windows10 with Python version (3.6.3) installed. The application is located at C:\Users\Public\Public Code\print_ctmr_labels\ and a shortcut is created at C:\Users\Public\Desktop
